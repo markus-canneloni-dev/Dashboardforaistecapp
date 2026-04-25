@@ -5,7 +5,6 @@ import { KPICard } from './components/glacier/KPICard';
 import { MapPanel } from './components/glacier/MapPanel';
 import { DropdownSection } from './components/glacier/DropdownSection';
 import { InfrastructureDropdown } from './components/glacier/InfrastructureDropdown';
-import { ContributingMapsDropdown } from './components/glacier/ContributingMapsDropdown';
 
 export default function App() {
   return (
@@ -56,10 +55,6 @@ export default function App() {
           {/* Dropdowns */}
           <DropdownSection title="Downstream Infrastructure">
             <InfrastructureDropdown />
-          </DropdownSection>
-
-          <DropdownSection title="Contributing Maps">
-            <ContributingMapsDropdown />
           </DropdownSection>
 
         </div>
