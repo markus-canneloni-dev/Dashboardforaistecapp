@@ -6,7 +6,7 @@ interface DropdownSectionProps {
 }
 
 export function DropdownSection({ title, children }: DropdownSectionProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="rounded-2xl border overflow-hidden"
@@ -19,7 +19,7 @@ export function DropdownSection({ title, children }: DropdownSectionProps) {
         className="w-full flex items-center justify-between px-[18px] py-4 text-left transition-colors"
         onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
         onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
-        <div className="text-[13px]" style={{ color: 'var(--text)' }}>
+        <div className="text-[14px]" style={{ color: 'var(--text)' }}>
           {title}
         </div>
         <svg

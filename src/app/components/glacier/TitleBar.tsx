@@ -7,15 +7,13 @@ export function TitleBar() {
         borderColor: 'var(--glacier-border)'
       }}>
       <div className="flex items-center gap-2.5">
-        <div className="w-[18px] h-[18px] rounded flex items-center justify-center"
-          style={{ background: 'linear-gradient(135deg, var(--glacier-blue) 0%, var(--glacier-teal) 100%)' }}>
-          <svg viewBox="0 0 10 10" fill="none" className="w-2.5 h-2.5">
-            <path d="M2 7 Q5 2 8 7" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
-            <circle cx="5" cy="4" r="1" fill="white" opacity="0.7"/>
-          </svg>
-        </div>
-        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
-          GlacierWatch — Risk Intelligence Dashboard
+        <img
+          src="/src/imports/AISTec_logo_dark_background-1.png"
+          alt="AISTech Logo"
+          className="h-6"
+        />
+        <span className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
+          GLOF Risk Platform
         </span>
       </div>
       <div className="flex gap-px">

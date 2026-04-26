@@ -1,7 +1,7 @@
 const infrastructure = [
   {
-    name: 'Zernez village',
-    detail: '4.2 km downstream · pop 1,200 · valley floor',
+    name: 'Chungthang Town',
+    detail: '~65 km · Major settlement; site of the destroyed Teesta III dam',
     risk: 'high' as const,
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -12,8 +12,8 @@ const infrastructure = [
     )
   },
   {
-    name: 'H27 main road',
-    detail: '3.1 km · primary valley artery · no bypass route',
+    name: 'National Highway 10',
+    detail: '~100+ km · Critical artery connecting Sikkim to the rest of India',
     risk: 'high' as const,
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -23,19 +23,22 @@ const infrastructure = [
     )
   },
   {
-    name: 'Hydropower intake',
-    detail: '6.8 km · 40 MW capacity · Inn river system',
+    name: 'Singtam/Rangpo',
+    detail: '~130-135 km · Downstream hubs with significant residential density',
     risk: 'medium' as const,
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M8 2v3M8 11v3M4 5l2 2M10 9l2 2M2 8h3M11 8h3" stroke="#f5a623" strokeWidth="1.2" strokeLinecap="round"/>
-        <circle cx="8" cy="8" r="2.5" stroke="#f5a623" strokeWidth="1.2"/>
+        <rect x="2" y="5" width="4" height="6" rx="0.5" stroke="#f5a623" strokeWidth="1.2"/>
+        <rect x="7" y="3" width="4" height="8" rx="0.5" stroke="#f5a623" strokeWidth="1.2"/>
+        <rect x="12" y="6" width="3" height="5" rx="0.5" stroke="#f5a623" strokeWidth="1.2"/>
+        <circle cx="4" cy="13" r="0.8" fill="#f5a623" opacity="0.5"/>
+        <circle cx="9" cy="13" r="0.8" fill="#f5a623" opacity="0.5"/>
       </svg>
     )
   },
   {
-    name: 'National park buffer',
-    detail: '8.4 km · Swiss NP · protected ecology',
+    name: 'Teesta River Basin',
+    detail: '~140+ km · Crucial agricultural and riparian land/ecosystems',
     risk: 'low' as const,
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -81,14 +84,14 @@ export function InfrastructureDropdown() {
               {item.icon}
             </div>
             <div className="flex-1">
-              <div className="text-[13px]" style={{ color: 'var(--text)' }}>
+              <div className="text-[14px]" style={{ color: 'var(--text)' }}>
                 {item.name}
               </div>
-              <div className="text-[10px] font-mono mt-0.5" style={{ color: 'var(--text-dim)' }}>
+              <div className="text-[12px] mt-1" style={{ color: 'var(--text-muted)' }}>
                 {item.detail}
               </div>
             </div>
-            <div className="text-[10px] px-2.5 py-1 rounded-full flex-shrink-0 border"
+            <div className="text-[11px] px-3 py-1.5 rounded-full flex-shrink-0 border"
               style={{
                 background: riskStyles[item.risk].pill,
                 color: riskStyles[item.risk].pillText,
@@ -98,17 +101,6 @@ export function InfrastructureDropdown() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-2.5 rounded-xl p-3 border flex items-center gap-2.5"
-        style={{
-          background: 'rgba(255,92,92,0.07)',
-          borderColor: 'rgba(255,92,92,0.2)'
-        }}>
-        <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--glacier-red)' }}></div>
-        <div className="text-[11px] leading-relaxed" style={{ color: 'var(--glacier-red)' }}>
-          Glacial lake outburst flood (GLOF) probability: <strong>12%</strong> within 5-year window · moraine stability index 0.61 (moderate risk)
-        </div>
       </div>
     </div>
   );

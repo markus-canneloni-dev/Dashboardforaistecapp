@@ -3,6 +3,7 @@ import { Taskbar } from './components/glacier/Taskbar';
 import { Header } from './components/glacier/Header';
 import { KPICard } from './components/glacier/KPICard';
 import { MapPanel } from './components/glacier/MapPanel';
+import { RiskScoreBreakdown } from './components/glacier/RiskScoreBreakdown';
 import { DropdownSection } from './components/glacier/DropdownSection';
 import { InfrastructureDropdown } from './components/glacier/InfrastructureDropdown';
 
@@ -18,44 +19,25 @@ export default function App() {
       <div className="flex flex-col pb-12">
         <div className="flex-1 flex flex-col p-5 gap-4 max-w-[1440px] w-full mx-auto">
 
-          {/* Header */}
-          <Header />
-
-          {/* KPI Cards Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <KPICard
-              label="Risk score"
-              value={74}
-              unit="/100"
-              delta="↑ Accelerating · High tier"
-              type="red"
-              deltaType="up"
-            />
-            <KPICard
-              label="Lake area 2024"
-              value={2.41}
-              unit="km²"
-              delta="↑ +0.18 km² vs 2023 (+8.1%)"
-              type="blue"
-              deltaType="up"
-            />
-            <KPICard
-              label="GLOF probability / 5yr"
-              value={12}
-              unit="%"
-              delta="↑ Above baseline threshold"
-              type="amber"
-              deltaType="up"
-            />
+          {/* Header and Risk Score Row */}
+          <div className="flex items-start justify-between gap-6">
+            <Header />
+            <div className="w-80 flex-shrink-0">
+              <KPICard
+                label="RISK SCORE"
+                value={0.86}
+                unit="/ 1"
+                delta="↑ Accelerating · High tier"
+                type="red"
+                deltaType="up"
+              />
+            </div>
           </div>
 
-          {/* Full Width Map */}
+          {/* Tabbed Interface with Map and Risk Analysis */}
           <MapPanel />
 
-          {/* Dropdowns */}
-          <DropdownSection title="Downstream Infrastructure">
-            <InfrastructureDropdown />
-          </DropdownSection>
+          {/* These sections are now inside MapPanel based on tab selection */}
 
         </div>
       </div>

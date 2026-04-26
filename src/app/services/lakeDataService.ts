@@ -66,15 +66,15 @@ export interface LakeData {
 // Mock data (replace this with real API calls)
 export function getMockLakeData(): LakeData {
   return {
-    name: 'Gepatschferner lake drainage',
+    name: 'South Lhonak Lake',
     riskScore: 74,
     lakeArea: 2.41,
     glofProbability: 12,
     downstreamPopulation: 3400,
     coordinates: {
-      lat: 46.52,
-      lon: 10.11,
-      elevation: 2847
+      lat: 27.915,
+      lon: 88.196,
+      elevation: 5200
     },
     timeSeriesData: [
       { year: 2023, area: 2.23 },

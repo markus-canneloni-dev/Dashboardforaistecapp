@@ -33,22 +33,22 @@ export function KPICard({ label, value, unit, delta, type, deltaType = 'up' }: K
       <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
         style={{ background: colors[type] }}></div>
 
-      <div className="text-[10px] uppercase tracking-wider mb-2"
+      <div className={`${label === 'RISK SCORE' ? 'text-[14px]' : 'text-[11px]'} uppercase tracking-wider mb-2`}
         style={{ color: 'var(--text-dim)' }}>
         {label}
       </div>
 
-      <div className="text-3xl tracking-tight leading-none mb-1.5"
+      <div className={`${label === 'RISK SCORE' ? 'text-5xl' : 'text-3xl'} tracking-tight leading-none mb-1.5`}
         style={{ color: colors[type] }}>
         {value}
         {unit && (
-          <span className="text-sm ml-0.5" style={{ color: 'var(--text-muted)' }}>
+          <span className={`${label === 'RISK SCORE' ? 'text-lg' : 'text-sm'} ml-0.5`} style={{ color: 'var(--text-muted)' }}>
             {unit}
           </span>
         )}
       </div>
 
-      <div className="flex items-center gap-1 text-[11px] font-mono"
+      <div className="flex items-center gap-1 text-[12px] font-mono"
         style={{ color: deltaColors[deltaType] }}>
         {delta}
       </div>
